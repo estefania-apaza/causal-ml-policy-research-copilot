@@ -19,9 +19,13 @@ def init_session_state():
     project_root = get_project_root()
     ensure_paths(project_root)
     
-    # Load env
+    # Load env (Local .env)
     from dotenv import load_dotenv
     load_dotenv(os.path.join(project_root, '.env'))
+    
+    # Bridge Streamlit Secrets to Environment Variables (for Cloud Deployment)
+    if "OPENAI_API_KEY" in st.secrets:
+        os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
     
     if 'project_root' not in st.session_state:
         st.session_state.project_root = project_root
