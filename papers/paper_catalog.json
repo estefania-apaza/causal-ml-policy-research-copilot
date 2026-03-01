@@ -1,0 +1,417 @@
+{
+  "papers": [
+    {
+      "id": "paper_001",
+      "title": "Using Machine Learning to Target Treatment: The Case of Household Energy Use",
+      "authors": [
+        "Knittel, C.",
+        "Stolper, S."
+      ],
+      "year": 2025,
+      "venue": "The Economic Journal",
+      "doi": "10.1093/ej/ueaf028",
+      "filename": "knittel-2025-ml-householdenergyuse.pdf",
+      "topics": [
+        "causal forests",
+        "heterogeneous treatment effects",
+        "policy targeting",
+        "energy policy",
+        "randomized controlled trials"
+      ],
+      "abstract": "We test the ability of causal forests to improve, through selective targeting, the effectiveness of a randomised program providing repeated behavioural nudges towards household energy conservation. The average treatment effect of the program is a monthly electricity reduction of 9 kilowatt hours (kWh), but the full distribution of predicted reductions ranges from roughly 1 to 33 kWh. Pre-treatment electricity consumption and home value are the strongest predictors of differential treatment effects. In a pair of targeting exercises, use of the causal forest increases social net benefits of the nudge program by a factor of 3–5 relative to the status quo. Using models calibrated with earlier program waves to choose households to target in later ones, we estimate that the forest produces more benefits than five other alternative predictive models. Bootstrapping to generate confidence intervals, we find the forest’s advantage to be statistically significant relative to some, but not all, of these alternatives."
+    },
+    {
+      "id": "paper_002",
+      "title": "Causal Machine Learning and its use for public policy",
+      "authors": [
+        "Lechner, M."
+      ],
+      "year": 2023,
+      "venue": "Swiss J Economics Statistics",
+      "doi": "10.1186/s41937-023-00113-y",
+      "filename": "lechnerm-2023-ml-publicpolicy.pdf",
+      "topics": [
+        "causal machine learning",
+        "policy evaluation methods",
+        "heterogeneous treatment effects",
+        "policy learning",
+        "program targeting"
+      ],
+      "abstract": "In recent years, microeconometrics experienced the ‘credibility revolution’, culminating in the 2021 Nobel prices for David Card, Josh Angrist, and Guido Imbens. This ‘revolution’ in how to do empirical work led to more reliable empirical knowledge of the causal effects of certain public policies. In parallel, computer science, and to some extent also statistics, developed powerful (so-called Machine Learning) algorithms that are very successful in prediction tasks. The new literature on Causal Machine Learning unites these developments by using algorithms originating in Machine Learning for improved causal analysis. In this non-technical overview, I review some of these approaches. Subsequently, I use an empirical example from the field of active labour market programme evaluation to showcase how Causal Machine Learning can be applied to improve the usefulness of such studies. I conclude with some considerations about shortcomings and possible future developments of these methods as well as wider implications for teaching and empirical studies."
+    },
+    {
+      "id": "paper_003",
+      "title": "The Impact of Carbon Emissions Trading Pilot Policies on High-Quality Agricultural Development: An Empirical Assessment Using Double Machine Learning",
+      "authors": [
+        "Xi, S.",
+        "Wang, X.",
+        "Lin, K."
+      ],
+      "year": 2025,
+      "venue": "Sustainability",
+      "doi": "10.3390/su17051912",
+      "filename": "xi-2025-dml-carbompolicy.pdf",
+      "topics": [
+        "double machine learning",
+        "difference-in-differences",
+        "environmental policy",
+        "carbon emissions trading",
+        "treatment effect heterogeneity"
+      ],
+      "abstract": "Amid the pressing challenges of global warming, carbon trading policies have gained increasing importance in advancing green development. This study employs Double Machine Learning (DML) to effectively process high-dimensional data and nonlinear relationships, integrating methods such as Difference-in-Differences (DID) to systematically address endogeneity issues. Using an indicator system for High-Quality Agricultural Development (HQAD) covering 30 provinces, municipalities, and autonomous regions, this study aims to evaluate the impact of the pilot carbon emissions trading (CET) policy on HQAD. The findings are as follows: (1) The pilot CET policy significantly enhances HQAD. Though the positive effect has diminished, multi-dimensional robustness checks confirm the results’ credibility and stability. (2) Mechanism analysis shows that the policy promotes HQAD through two key pathways: strengthening environmental regulation (ER) and improving agricultural energy total factor productivity (AETFP). (3) Regional heterogeneity is evident, with the eastern region showing the most substantial policy effects, followed by the western region, while the central region shows minimal impact. Regarding grain functional zones, the policy effect is significant in the main sales and balance areas but weaker in the main producing area. Based on these findings, this study provides three policy recommendations to inform policymaking, facilitate the green transition, and promote High-Quality Agricultural Development."
+    },
+    {
+      "id": "paper_004",
+      "title": "Estimating and evaluating treatment effect heterogeneity: A causal forests approach",
+      "authors": [
+        "Zheng, L.",
+        "Yin, W."
+      ],
+      "year": 2023,
+      "venue": "Research & Politics",
+      "doi": "10.1177/20531680231153080",
+      "filename": "zheng-2023-cf-treatmenteffect.pdf",
+      "topics": [
+        "causal forests",
+        "heterogeneous treatment effects",
+        "causal inference",
+        "nonparametric estimation",
+        "social science applications"
+      ],
+      "abstract": "Amid the pressing challenges of global warming, carbon trading policies have gained increasing importance in advancing green development. This study employs Double Machine Learning (DML) to effectively process high-dimensional data and nonlinear relationships, integrating methods such as Difference-in-Differences (DID) to systematically address endogeneity issues. Using an indicator system for High-Quality Agricultural Development (HQAD) covering 30 provinces, municipalities, and autonomous regions, this study aims to evaluate the impact of the pilot carbon emissions trading (CET) policy on HQAD. The findings are as follows: (1) The pilot CET policy significantly enhances HQAD. Though the positive effect has diminished, multi-dimensional robustness checks confirm the results’ credibility and stability. (2) Mechanism analysis shows that the policy promotes HQAD through two key pathways: strengthening environmental regulation (ER) and improving agricultural energy total factor productivity (AETFP). (3) Regional heterogeneity is evident, with the eastern region showing the most substantial policy effects, followed by the western region, while the central region shows minimal impact. Regarding grain functional zones, the policy effect is significant in the main sales and balance areas but weaker in the main producing area. Based on these findings, this study provides three policy recommendations to inform policymaking, facilitate the green transition, and promote High-Quality Agricultural Development."
+    },
+    {
+      "id": "paper_005",
+      "title": "Transparency challenges in policy evaluation with causal machine learning: improving usability and accountability",
+      "authors": [
+        "Rehill, P.",
+        "Biddle, N."
+      ],
+      "year": 2024,
+      "venue": "Data & Policy",
+      "doi": "10.1017/dap.2024.35",
+      "filename": "rehillf-cml-transparencychallenges.pdf",
+      "topics": [
+        "causal machine learning",
+        "policy evaluation",
+        "algorithmic transparency",
+        "explainable AI",
+        "causal forests"
+      ],
+      "abstract": "Causal machine learning tools are beginning to see use in real-world policy evaluation tasks to flexibly estimate treatment effects. One issue with these methods is that the machine learning models used are generally black boxes, that is, there is no globally interpretable way to understand how a model makes estimates. This is a clear problem for governments who want to evaluate policy as it is difficult to understand whether such models are functioning in ways that are fair, based on the correct interpretation of evidence and transparent enough to allow for accountability if things go wrong. However, there has been little discussion of transparency problems in the causal machine learning literature and how these might be overcome. This article explores why transparency issues are a problem for causal machine learning in public policy evaluation applications and considers ways these problems might be addressed through explainable AI tools and by simplifying models in line with interpretable AI principles. It then applies these ideas to a case study using a causal forest model to estimate conditional average treatment effects for returns on education study. It shows that existing tools for understanding black-box predictive models are not as well suited to causal machine learning and that simplifying the model to make it interpretable leads to an unacceptable increase in error (in this application). It concludes that new tools are needed to properly understand causal machine learning models and the algorithms that fit them."
+    },
+    {
+      "id": "paper_006",
+      "title": "Causal forest estimation of heterogeneous and time-varying environmental policy effects",
+      "authors": [
+        "Miller, S."
+      ],
+      "year": 2020,
+      "venue": "Journal of Environmental Economics and Management",
+      "doi": "10.1016/j.jeem.2020.102337",
+      "filename": "miller-cfe-environmentalpolicy.pdf",
+      "topics": [
+        "causal forests",
+        "heterogeneous treatment effects",
+        "time-varying effects",
+        "environmental policy",
+        "panel data methods"
+      ],
+      "abstract": "Empirically evaluating environmental policies requires grappling with impacts that exhibit not only cross-sectional heterogeneity, but also variation across time. Phased policy roll-outs offer opportunities for improvement across cohorts and policy effects can grow or decay, especially when natural processes are involved. Focusing on a subset of these factors can lead to erroneous inference, while considering them jointly magnifies specification challenges. To address these challenges, I extend and apply causal forests, a nonparametric method for estimating heterogeneous treatment effects, to simultaneously examine how effects vary across time. I first adapt causal forests to a panel setting with staggered policy introduction by incorporating dynamic selection assumptions and estimators. After illustrating the method's performance on simulated data, I use it to reanalyze how individual quota programs have affected fisheries catches around the world. Estimates reveal substantial heterogeneity and time dependencies and suggest that longer policy exposure may be less beneficial than previously thought. More generally, the approach has potential value for evaluating impacts of a range of environmental policies as well as environmental shocks."
+    },
+    {
+      "id": "paper_007",
+      "title": "A causal machine-learning framework for studying policy impact on air pollution: a case study in COVID-19 lockdowns",
+      "authors": [
+        "Heffernan, C.",
+        "Koehler, K.",
+        "Levy Zamora, M.",
+        "Buehler, C.",
+        "Gentner, D.",
+        "Peng, R.",
+        "Datta, A."
+      ],
+      "year": 2025,
+      "venue": "American Journal of Epidemiology",
+      "doi": "10.1093/aje/kwae171",
+      "filename": "heffernan-cml-airpollution.pdf",
+      "topics": [
+        "causal machine learning",
+        "comparative interrupted time series",
+        "environmental policy",
+        "air pollution",
+        "policy evaluation"
+      ],
+      "abstract": "When studying the impact of policy interventions or natural experiments on air pollution, such as new environmental policies or the opening or closing of an industrial facility, careful statistical analysis is needed to separate causal changes from other confounding factors. Using COVID-19 lockdowns as a case study, we present a comprehensive framework for estimating and validating causal changes from such perturbations. We propose using flexible machine learning–based comparative interrupted time series (CITS) models for estimating such a causal effect. We outline the assumptions required to identify causal effects, showing that many common methods rely on strong assumptions that are relaxed by machine learning models. For empirical validation, we also propose a simple diagnostic criterion, guarding against false effects in baseline years when there was no intervention. The framework is applied to study the impact of COVID-19 lockdowns on atmospheric nitrogen dioxide (NO2) levels in the eastern United States. The machine learning approaches guard against false effects better than common methods and suggest decreases in NO2 levels in 4 US cities (Boston, Massachusetts; New York, New York; Baltimore, Maryland; and Washington, DC) during the pandemic lockdowns. The study showcases the importance of our validation framework in selecting a suitable method and the utility of a machine learning–based CITS model for studying causal changes in air pollution time series."
+    },
+    {
+      "id": "paper_008",
+      "title": "Estimating heterogeneous policy impacts using causal machine learning: a case study of health insurance reform in Indonesia",
+      "authors": [
+        "Kreif, N.",
+        "DiazOrdaz, K.",
+        "Moreno-Serra, R.",
+        "Mirelman, A.",
+        "Hidayat, T.",
+        "Suhrcke, M."
+      ],
+      "year": 2021,
+      "venue": "Health Services and Outcomes Research Methodology",
+      "doi": "10.1007/s10742-021-00259-3",
+      "filename": "kreif-cml-policyimpacts.pdf",
+      "topics": [
+        "causal machine learning",
+        "causal forests",
+        "heterogeneous treatment effects",
+        "health policy evaluation",
+        "health insurance reform"
+      ],
+      "abstract": "Policymakers seeking to target health policies efficiently towards specific population groups need to know which individuals stand to benefit the most from each of these policies. While traditional approaches for subgroup analyses are constrained to only consider a small number of pre-defined subgroups, recently proposed causal machine learning (CML) approaches help explore treatment-effect heterogeneity in a more flexible yet principled way. Causal forests use a generalisation of the random forest algorithm to estimate heterogenous treatment effects both at the individual and the subgroup level. Our paper aims to explore this approach in the setting of health policy evaluation with strong observed confounding, applied specifically to the context of mothers’ health insurance enrolment in Indonesia. Comparing two health insurance schemes (subsidised and contributory) against no insurance, we find beneficial average impacts of enrolment in contributory health insurance on maternal health care utilisation and infant mortality, but no impact of subsidised health insurance. The causal forest algorithm identified significant heterogeneity in the impacts of contributory insurance, not just along socioeconomic variables that we pre-specified (indicating higher benefits for poorer, less educated, and rural women), but also according to some other characteristics not foreseen prior to the analysis, suggesting in particular important geographical impact heterogeneity. Our study demonstrates the power of CML approaches to uncover unexpected heterogeneity in policy impacts. The findings from our evaluation of past health insurance expansions can potentially guide the re-design of the eligibility criteria for subsidised health insurance in Indonesia."
+    },
+    {
+      "id": "paper_009",
+      "title": "Can green financial policy drive urban carbon unlocking efficiency? A causal inference approach based on double machine learning",
+      "authors": [
+        "Tang, W.",
+        "Zhou, Q."
+      ],
+      "year": 2025,
+      "venue": "Frontiers in Environmental Science",
+      "doi": "10.3389/fenvs.2025.1608475",
+      "filename": "tang-zhou-2025-greenfinance-dml.pdf",
+      "topics": [
+        "double machine learning",
+        "environmental policy",
+        "green finance",
+        "treatment effect heterogeneity",
+        "spatial spillovers"
+      ],
+      "abstract": "The establishment of green finance reform and innovation pilot zones (GFRIPZ) is a crucial initiative in China’s advancement of green finance development. Whether this policy can effectively enhance carbon unlocking efficiency (CUE) constitutes a significant research question. Utilizing panel data from 267 Chinese cities spanning 2011 to 2022 and treating the GFRIPZ policy as a quasi-natural experiment, this study employs a double machine learning (DML) model to empirically investigate the impact of green finance policy on urban carbon unlocking efficiency. The results show that: (1) GFRIPZ significantly enhances CUE, and this conclusion remains valid after undergoing a series of robustness checks. (2) Mechanism validation reveal that GFRIPZ enhances CUE through three pathways: optimizing industrial structure, reducing energy intensity, and strengthening public environmental concern. (3) Heterogeneity analysis indicates that the carbon unlocking effects of GFRIPZ are more pronounced in eastern regions, large cities, non-resource-based cities, cities with higher internet development levels, and cities with advanced financial development. Concurrently, the applicability of GFRIPZ also benefits from regional institutional contexts such as public data openness, carbon emissions trading, and green resource endowment. (4) Spatial spillover effects demonstrate that GFRIPZ significantly enhances CUE in surrounding areas. This research not only provides a novel analytical framework for regional carbon unlocking pathways but also offers policy recommendations for enhancing green finance systems and overcoming carbon lock-in dilemmas."
+    },
+    {
+      "id": "paper_010",
+      "title": "Machine learning who to nudge: Causal vs predictive targeting in a field experiment on student financial aid renewal",
+      "authors": [
+        "Athey, S.",
+        "Keleher, N.",
+        "Spiess, J."
+      ],
+      "year": 2025,
+      "venue": "Journal of Econometrics",
+      "doi": "10.1016/j.jeconom.2024.105945",
+      "filename": "athey-keleher-spiess-2025-targeting-nudges.pdf",
+      "topics": [
+        "causal forests",
+        "policy targeting",
+        "field experiments",
+        "heterogeneous treatment effects",
+        "behavioral interventions"
+      ],
+      "abstract": "In many settings, interventions may be more effective for some individuals than for others, so that targeting interventions may be beneficial. We analyze the value of targeting in the context of a large-scale field experiment with over 53,000 college students, where the goal was to use “nudges” to encourage students to renew their financial-aid applications before a non-binding deadline. We begin with baseline approaches to targeting. First, we target based on a causal forest that assigns students to treatment according to those estimated to have the highest treatment effects. Next, we evaluate two alternative targeting policies, one targeting students with low predicted probability of renewing financial aid in the absence of the treatment, the other targeting those with high probability. The predicted baseline outcome is not the ideal criterion for targeting, nor is it a priori clear whether to prioritize low, high, or intermediate predicted probability. Nonetheless, targeting on low baseline outcomes is common in practice, for example when treatment effects are difficult to estimate. We propose hybrid approaches that incorporate the strengths of predictive approaches (accurate estimation) and causal approaches (correct criterion). We show that targeting intermediate baseline outcomes is most effective in our application, while targeting based on low baseline outcomes is detrimental. In one year of the experiment, nudging all students improved early filing by an average of 6.4 percentage points over a baseline average of 37%, and we estimate that targeting half of the students using our preferred policy attains around 75% of this benefit."
+    },
+    {
+      "id": "paper_011",
+      "title": "Recursive partitioning for heterogeneous causal effects",
+      "authors": [
+        "Athey, S.",
+        "Imbens, G."
+      ],
+      "year": 2016,
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+      "doi": "10.1073/pnas.1510489113",
+      "filename": "athey-imblens-2016-recursivepartitioning.pdf",
+      "topics": [
+        "heterogeneous treatment effects",
+        "causal inference",
+        "regression trees",
+        "supervised machine learning",
+        "cross-validation"
+      ],
+      "abstract": "In this paper we propose methods for estimating heterogeneity in causal effects in experimental and observational studies and for conducting hypothesis tests about the magnitude of differences in treatment effects across subsets of the population. We provide a data-driven approach to partition the data into subpopulations that differ in the magnitude of their treatment effects. The approach enables the construction of valid confidence intervals for treatment effects, even with many covariates relative to the sample size, and without 'sparsity' assumptions. We propose an 'honest' approach to estimation, whereby one sample is used to construct the partition and another to estimate treatment effects for each subpopulation. Our approach builds on regression tree methods, modified to optimize for goodness of fit in treatment effects and to account for honest estimation. Our model selection criterion anticipates that bias will be eliminated by honest estimation and also accounts for the effect of making additional splits on the variance of treatment effect estimates within each subpopulation. We address the challenge that the 'ground truth' for a causal effect is not observed for any individual unit, so that standard approaches to cross-validation must be modified. Through a simulation study, we show that for our preferred method honest estimation results in nominal coverage for 90% confidence intervals, whereas coverage ranges between 74% and 84% for nonhonest approaches. Honest estimation requires estimating the model with a smaller sample size; the cost in terms of mean squared error of treatment effects for our preferred method ranges between 7-22%."
+    },
+    {
+      "id": "paper_012",
+      "title": "Predicting policy funding allocation with Machine Learning",
+      "authors": [
+        "Caravaggio, N.",
+        "Resce, G.",
+        "Vaquero-Piñeiro, C."
+      ],
+      "year": 2025,
+      "venue": "Socio-Economic Planning Sciences",
+      "doi": "10.1016/j.seps.2025.102175",
+      "filename": "caravaggio-2025-ml-policyfunding.pdf",
+      "topics": [
+        "policy evaluation",
+        "machine learning",
+        "fund allocation prediction",
+        "random forest",
+        "XGBoost"
+      ],
+      "abstract": "Allocating funds through competitive opportunities is a core tool of place-based development policies, as it can generate economic benefits and support the revitalisation of 'left-behind' territories. By relying on Machine Learning (ML) techniques, this paper investigates the predictability of actors expected to benefit from EU development funding over the 2014–2020 period in Italy. We implemented eight different ML classification algorithms and Random Forest, followed by Extreme Gradient Boosting, and Support Vector Machine emerged as the most predictive. The results show that it is possible to make out-of-sample predictions and diagnose the precise factors influencing fund allocation, such as territorial attributes, economic dimensions, and production specialisation. Knowing in advance potential winners of the calls can help design tailored territorial, and even sectorial, public policies to address the obstacles to local development and green transition, and to efficiently distribute resources within the policy framework. This evidence contributes to the reflection launched by the Commission on the future of the competitiveness of the EU."
+    },
+    {
+      "id": "paper_013",
+      "title": "Estimation and Inference of Heterogeneous Treatment Effects using Random Forests",
+      "authors": [
+        "Wager, S.",
+        "Athey, S."
+      ],
+      "year": 2018,
+      "venue": "Journal of the American Statistical Association",
+      "doi": "10.1080/01621459.2017.1319839",
+      "filename": "wager-athey-2018-causalforests.pdf",
+      "topics": [
+        "causal forests",
+        "heterogeneous treatment effects",
+        "random forest",
+        "asymptotic inference",
+        "personalized treatment effects"
+      ],
+      "abstract": "Many scientific and engineering challenges—ranging from personalized medicine to customized marketing recommendations—require an understanding of treatment effect heterogeneity. In this article, we develop a nonparametric causal forest for estimating heterogeneous treatment effects that extends Breiman’s widely used random forest algorithm. In the potential outcomes framework with unconfoundedness, we show that causal forests are pointwise consistent for the true treatment effect and have an asymptotically Gaussian and centered sampling distribution. We also discuss a practical method for constructing asymptotic confidence intervals for the true treatment effect that are centered at the causal forest estimates. Our theoretical results rely on a generic Gaussian theory for a large family of random forest algorithms. To our knowledge, this is the first set of results that allows any type of random forest, including classification and regression forests, to be used for provably valid statistical inference. In experiments, we find causal forests to be substantially more powerful than classical methods based on nearest-neighbor matching, especially in the presence of irrelevant covariates."
+    },
+    {
+      "id": "paper_014",
+      "title": "The value added of machine learning to causal inference: evidence from revisited studies",
+      "authors": [
+        "Baiardi, A.",
+        "Naghi, A. A."
+      ],
+      "year": 2024,
+      "venue": "The Econometrics Journal",
+      "doi": "10.1093/ectj/utae004",
+      "filename": "baiardi-naghi-2024-ml-causal.pdf",
+      "topics": [
+        "causal machine learning",
+        "double machine learning",
+        "causal forests",
+        "heterogeneous treatment effects",
+        "empirical economics"
+      ],
+      "abstract": "A new and rapidly growing econometric literature is making advances in the problem of using machine learning methods for causal inference questions. Yet, the empirical economics literature has not started to fully exploit the strengths of these modern methods. We revisit influential empirical studies with causal machine learning methods aiming to connect the econometric theory on these methods with empirical economics. We focus on the double machine learning, causal forest, and generic machine learning methods, in the context of both average and heterogeneous treatment effects. We illustrate the implementation of these methods in a variety of settings and highlight the relevance and value added relative to traditional methods used in the original studies."
+    },
+    {
+      "id": "paper_015",
+      "title": "Recent Advances in Causal Machine Learning and Dynamic Policy Learning",
+      "authors": [
+        "Chen, J.",
+        "Jing, A."
+      ],
+      "year": 2025,
+      "venue": "WIREs Computational Statistics",
+      "doi": "10.1002/wics.70050",
+      "filename": "chen-jing-2025-causalml-dynamicpolicy.pdf",
+      "topics": [
+        "causal machine learning",
+        "dynamic policy learning",
+        "meta-learners",
+        "double machine learning",
+        "causal forests"
+      ],
+      "abstract": "Causal machine learning has emerged as a vital field at the intersection of machine learning and econometrics, addressing challenges in estimating treatment effect heterogeneity and optimizing policies. The first half of this review examines recent advances in causal machine learning within a static framework, covering methods such as meta-learners, double machine learning, and causal forests, which improve conditional average treatment effect estimation and support personalized decision-making. The second half focuses on dynamic policy learning, which integrates dynamic treatment regimes and reinforcement learning techniques to address sequential decision problems. We discuss value-based, policy-based, and model-based approaches in both online and offline environments, and conclude with the challenges of offline settings, fundamentally a causal inference problem, together with strategies to address them."
+    },
+    {
+      "id": "paper_016",
+      "title": "Estimating heterogeneous impacts of subsidised health insurance: A causal machine learning approach",
+      "authors": [
+        "Shah, V.",
+        "Kreif, N."
+      ],
+      "year": 2025,
+      "venue": "PLOS ONE",
+      "doi": "10.1371/journal.pone.0315057",
+      "filename": "shah-kreif-2025-subsidised-healthinsurance.pdf",
+      "topics": [
+        "causal machine learning",
+        "causal forests",
+        "heterogeneous treatment effects",
+        "health policy evaluation",
+        "healthcare utilisation"
+      ],
+      "abstract": "The evaluation of social and health policies often necessitates understanding the variations in impacts based on recipients’ observed characteristics, underscoring the value of estimating treatment effect heterogeneity. In this study, we leverage predictive and causal machine learning to assess the impact of the subsidised component of Indonesia’s National Health Insurance Programme (“JKN”) on healthcare utilisation in 2017. We employ causal forests for estimating heterogeneous treatment effects and the super learner algorithm for prediction tasks. Our approach addresses the prevalence of zeros in the utilisation outcomes through a two-part model, which separates the outcome model into zero and non-zero counts. This allows for distinct investigation of policy impacts on the decision to seek care and the quantity of care consumed. We interpret and summarise treatment effect heterogeneity using various approaches, including data-driven subgroup analyses and linear projections, which are grounded in theory. Our results demonstrate a positive average impact on healthcare demand with evident heterogeneity; for instance, the increase in demand varies among recipients. We also find that the effect is modified by a set of theoretically motivated covariates and those identified through our data-driven approach."
+    },
+    {
+      "id": "paper_017",
+      "title": "Heterogeneous treatment effects analysis for social scientists: A review",
+      "authors": [
+        "Hu, A."
+      ],
+      "year": 2023,
+      "venue": "Social Science Research",
+      "doi": "10.1016/j.ssresearch.2022.102810",
+      "filename": "hu-2023-heterogeneous-treatment-effects-review.pdf",
+      "topics": [
+        "heterogeneous treatment effects",
+        "causal forests",
+        "causal trees",
+        "meta-learners",
+        "social science methods"
+      ],
+      "abstract": "Social scientists have long been interested in the varying responses to a specific intervention, motivating the enterprise of heterogeneous treatment effects (HTE) analysis. Over the past five decades, the rapid development of HTE methods, from conventional multiplicative interactions in linear models to explorations based on machine learning techniques, has been witnessed. This article presents a systematic review of major HTE methods, including multiplicative interaction modeling, generalized additive modeling, propensity-score-based methods, marginal treatment effect, separate LASSO constraints, causal trees, causal forests, Bayesian additive regression trees, and meta-learners (i.e., the S-learner, T-learner, X-learner, and R-learner). These methods, as described roughly in a chronological order to emphasize methodological developments, are addressed to highlight their respective strengths and limitations. Following an illustrative example, this article reflects on future methodological developments."
+    },
+    {
+      "id": "paper_018",
+      "title": "Machine learning estimation of heterogeneous causal effects: Empirical Monte Carlo evidence",
+      "authors": [
+        "Knaus, M. C.",
+        "Lechner, M.",
+        "Strittmatter, A."
+      ],
+      "year": 2021,
+      "venue": "The Econometrics Journal",
+      "doi": "10.1093/ectj/utaa014",
+      "filename": "knaus-2021-ml-heterogeneous-causal-effects.pdf",
+      "topics": [
+        "causal machine learning",
+        "heterogeneous treatment effects",
+        "Monte Carlo simulations",
+        "empirical evaluation",
+        "causal inference"
+      ],
+      "abstract": "We investigate the finite-sample performance of causal machine learning estimators for heterogeneous causal effects at different aggregation levels. We employ an empirical Monte Carlo study that relies on arguably realistic data generation processes (DGPs) based on actual data in an observational setting. We consider 24 DGPs, eleven causal machine learning estimators, and three aggregation levels of the estimated effects. Four of the considered estimators perform consistently well across all DGPs and aggregation levels. These estimators have multiple steps to account for the selection into the treatment and the outcome process."
+    },
+    {
+      "id": "paper_019",
+      "title": "Model Averaging and Double Machine Learning",
+      "authors": [
+        "Ahrens, A.",
+        "Hansen, C. B.",
+        "Schaffer, M. E.",
+        "Wiemann, T."
+      ],
+      "year": 2025,
+      "venue": "Journal of Applied Econometrics",
+      "doi": "10.1002/jae.3103",
+      "filename": "ahrens-2025-modelaveraging-ddml.pdf",
+      "topics": [
+        "double machine learning",
+        "model averaging",
+        "stacking",
+        "structural parameter estimation",
+        "simulation studies"
+      ],
+      "abstract": "This paper discusses pairing double/debiased machine learning (DDML) with stacking, a model averaging method for combining multiple candidate learners, to estimate structural parameters. In addition to conventional stacking, we consider two stacking variants available for DDML: Short-stacking exploits the cross-fitting step of DDML to substantially reduce the computational burden, and pooled stacking enforces common stacking weights over cross-fitting folds. Using calibrated simulation studies and two applications estimating gender gaps in citations and wages, we show that DDML with stacking is more robust to partially unknown functional forms than common alternative approaches based on single pre-selected learners. We provide Stata and R software implementing our proposals."
+    },
+    {
+      "id": "paper_020",
+      "title": "Retrospective Causal Inference with Machine Learning Ensembles: An Application to Anti-recidivism Policies in Colombia",
+      "authors": [
+        "Samii, C.",
+        "Paler, L.",
+        "Zukerman Daly, S."
+      ],
+      "year": 2017,
+      "venue": "Political Analysis",
+      "doi": "10.1093/pan/mpw019",
+      "filename": "samii-2017-retrospective-causal-ml.pdf",
+      "topics": [
+        "causal inference",
+        "machine learning ensembles",
+        "retrospective analysis",
+        "policy evaluation",
+        "anti-recidivism"
+      ],
+      "abstract": "We present new methods to estimate causal effects retrospectively from micro data with the assistance of a machine learning ensemble. This approach overcomes two important limitations in conventional methods like regression modeling or matching: (i) ambiguity about the pertinent retrospective counterfactuals and (ii) potential misspecification, overfitting, and otherwise bias-prone or inefficient use of a large identifying covariate set in the estimation of causal effects. Our method targets the analysis toward a well-defined 'retrospective intervention effect' based on hypothetical population interventions and applies a machine learning ensemble that allows data to guide us, in a controlled fashion, on how to use a large identifying covariate set. We illustrate with an analysis of policy options for reducing ex-combatant recidivism in Colombia."
+    }
+  ]
+}

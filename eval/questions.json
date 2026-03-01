@@ -1,0 +1,50 @@
+import json
+
+def get_eval_questions():
+    questions = [
+    {
+        "id": "q1",
+        "type": "factual",
+        "question": "What is the average treatment effect of the program in the study by Knittel and Stolper?",
+        "expected_keywords": [
+            "9 kilowatt hours",
+            "9 kWh",
+            "electricity reduction"
+        ]
+    },
+    {
+        "id": "q2",
+        "type": "analytical",
+        "question": "Compare the performance of causal forests versus alternative predictive models according to Knittel and Stolper.",
+        "expected_keywords": [
+            "factor of 3-5",
+            "more benefits",
+            "statistically significant"
+        ]
+    },
+    {
+        "id": "q3",
+        "type": "synthesis",
+        "question": "How are causal forests generally used for public policy based on Lechner (2023) and similar papers?",
+        "expected_keywords": [
+            "credibility revolution",
+            "heterogeneous treatment effects",
+            "random forest algorithm"
+        ]
+    },
+    {
+        "id": "q4",
+        "type": "edge_case",
+        "question": "What is the capital of France?",
+        "expected_keywords": [
+            "cannot find this information",
+            "I do not know"
+        ]
+    }
+]
+    return questions
+
+if __name__ == "__main__":
+    with open("eval/questions.json",
+"w") as f:
+        json.dump(get_eval_questions(), f, indent=4)
