@@ -103,6 +103,14 @@ with st.sidebar:
             st.session_state.filter_year = "All Years"
             st.session_state.filter_topic = "All Topics"
             st.rerun()
+    
+    if st.button("🔄 Reset RAG Engine", use_container_width=True, help="Force re-initialization of the AI engine if you see errors."):
+        st.session_state.pop('rag', None)
+        st.session_state.rag_initialized = False
+        from utils.session import init_session_state
+        init_session_state()
+        st.success("RAG Engine reset successfully!")
+        st.rerun()
 
 # Resolve paper_id from author/year/topic filters if no paper selected
 if paper_id_filter is None and (selected_author != "All Authors" or selected_year != "All Years" or selected_topic != "All Topics"):
