@@ -12,7 +12,7 @@ from src.chunking.chunker import TokenChunker
 from src.embedding.embedder import OpenAIEmbedder
 from src.vectorstore.chroma_store import ChromaDBStore
 from src.retrieval.retriever import Retriever
-from src.generation.generator import Generator
+from src.generation.llm_generator import Generator
 
 class RAGPipeline:
     __version__ = "2.0.0"

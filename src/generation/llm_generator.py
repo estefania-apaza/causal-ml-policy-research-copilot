@@ -6,11 +6,12 @@ class Generator:
         self.model_name = model_name
         self.client = OpenAI()
 
-    def generate_answer(self, system_prompt: str, context: str, question: str, history: list = None) -> str:
+    def generate_answer(self, system_prompt: str, context: str, question: str, history: list = None, **kwargs) -> str:
         """
         Generates an answer using the provided system prompt template and conversation history.
         history: List of dictionaries with 'role' and 'content' keys.
         """
+        # Accept any extra args gracefully via **kwargs
         if history is None:
             history = []
             
@@ -39,11 +40,12 @@ class Generator:
             )
              return response.choices[0].message.content
              
-    def generate_json_answer(self, system_prompt: str, context: str, question: str, history: list = None) -> dict:
+    def generate_json_answer(self, system_prompt: str, context: str, question: str, history: list = None, **kwargs) -> dict:
         """
         Forces JSON output format based on system prompt instructions.
         history: List of dictionaries with 'role' and 'content' keys.
         """
+        # Accept any extra args gracefully via **kwargs
         if history is None:
             history = []
             
