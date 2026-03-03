@@ -292,23 +292,29 @@
     },
     {
       "id": "paper_015",
-      "title": "Recent Advances in Causal Machine Learning and Dynamic Policy Learning",
+      "title": "Machine learning in causal inference for epidemiology",
       "authors": [
-        "Chen, J.",
-        "Jing, A."
+        "Moccia, C.",
+        "Moirano, G.",
+        "Popovic, M.",
+        "Pizzi, C.",
+        "Fariselli, P.",
+        "Richiardi, L.",
+        "Ekstrøm, C. T.",
+        "Maule, M."
       ],
-      "year": 2025,
-      "venue": "WIREs Computational Statistics",
-      "doi": "10.1002/wics.70050",
-      "filename": "chen-jing-2025-causalml-dynamicpolicy.pdf",
+      "year": 2024,
+      "venue": "European Journal of Epidemiology",
+      "doi": "",
+      "filename": "moccia-et-al-2024-ml-causal-epidemiology.pdf",
       "topics": [
         "causal machine learning",
-        "dynamic policy learning",
-        "meta-learners",
+        "targeted maximum likelihood estimation",
+        "augmented inverse probability weighting",
         "double machine learning",
-        "causal forests"
+        "epidemiology"
       ],
-      "abstract": "Causal machine learning has emerged as a vital field at the intersection of machine learning and econometrics, addressing challenges in estimating treatment effect heterogeneity and optimizing policies. The first half of this review examines recent advances in causal machine learning within a static framework, covering methods such as meta-learners, double machine learning, and causal forests, which improve conditional average treatment effect estimation and support personalized decision-making. The second half focuses on dynamic policy learning, which integrates dynamic treatment regimes and reinforcement learning techniques to address sequential decision problems. We discuss value-based, policy-based, and model-based approaches in both online and offline environments, and conclude with the challenges of offline settings, fundamentally a causal inference problem, together with strategies to address them."
+      "abstract": "In causal inference, parametric models are usually employed to address causal questions by estimating the effect of interest. However, parametric models rely on the correct model specification assumption, which, if not met, leads to biased effect estimates. Correct model specification is particularly challenging in high-dimensional settings. Incorporating machine learning (ML) into causal analyses may reduce bias arising from model misspecification, as ML methods do not require specifying a functional form for relationships between variables. Nevertheless, directly plugging ML predictions into predefined effect formulas may introduce plug-in bias. To address this issue and achieve desirable asymptotic properties, new estimators combining the predictive strength of ML with the inferential capabilities of traditional statistical methods have been developed. This review provides an overview of three state-of-the-art estimators for epidemiologists: Targeted Maximum Likelihood Estimation (TMLE), Augmented Inverse Probability Weighting (AIPW), and Double/Debiased Machine Learning (DML)."
     },
     {
       "id": "paper_016",
