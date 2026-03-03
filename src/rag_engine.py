@@ -82,7 +82,7 @@ class RAGPipeline:
         self.vector_store.add_chunks(chunks, embeddings)
         return len(chunks)
         
-    def answer_question(self, question: str, strategy: str = "v1_delimiters", paper_id: str | None = None, history: list = None) -> str:
+    def answer_question(self, question: str, strategy: str = "v1_delimiters", paper_id: str | None = None, history: list = None, **kwargs) -> str:
         """
         Answers a user question based on the selected prompt strategy and optional chat history.
         """
