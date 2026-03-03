@@ -38,7 +38,7 @@ def init_session_state():
         st.session_state.chunk_size = 512
     
     if 'rag_engine' not in st.session_state:
-        from src.rag_pipeline import RAGPipeline
+        from src.rag_engine import RAGPipeline
         try:
             st.session_state.rag_engine = RAGPipeline(
                 project_root=project_root, 
