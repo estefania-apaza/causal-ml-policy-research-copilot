@@ -16,17 +16,40 @@
 ## 3. Architecture
 
 ### System Diagram
-```mermaid
-graph TD
-    User((User)) --> UI[Streamlit Interface]
-    UI --> Filter[Search & Filter Logic]
-    Filter --> RAG[RAG Pipeline]
-    RAG --> Extract[PDF Extractor - PyMuPDF]
-    RAG --> Chunk[Token-based Chunker - tiktoken]
-    RAG --> Embed[Embedder - OpenAI text-embedding-3-small]
-    Embed --> Vector[Vector Store - ChromaDB]
-    RAG --> Gen[Generator - GPT-4o]
-    Gen --> Response[Response with APA Citations]
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│                        RESEARCH COPILOT                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐  │
+│  │   20 PDFs    │───▶│   INGESTION  │───▶│   VECTOR DATABASE    │  │
+│  │  (Academic   │    │   PIPELINE   │    │    (ChromaDB)        │  │
+│  │   Papers)    │    │              │    │                      │  │
+│  └──────────────┘    │ - Extract    │    │ - Embeddings         │  │
+│                      │ - Clean      │    │ - Metadata           │  │
+│                      │ - Chunk      │    │ - Similarity Search  │  │
+│                      │ - Embed      │    │                      │  │
+│                      └──────────────┘    └──────────┬───────────┘  │
+│                                                      │              │
+│  ┌──────────────────────────────────────────────────┼──────────┐   │
+│  │                    RAG PIPELINE                   │          │   │
+│  │                                                   ▼          │   │
+│  │  ┌─────────┐    ┌─────────────┐    ┌─────────────────────┐  │   │
+│  │  │  USER   │───▶│   RETRIEVER │───▶│   GPT-4 GENERATOR   │  │   │
+│  │  │  QUERY  │    │   (top-k)   │    │   + Prompt Engine   │  │   │
+│  │  └─────────┘    └─────────────┘    └──────────┬──────────┘  │   │
+│  │                                                │             │   │
+│  └────────────────────────────────────────────────┼─────────────┘   │
+│                                                   │                 │
+│  ┌────────────────────────────────────────────────┼─────────────┐  │
+│  │                 WEB INTERFACE                   ▼             │  │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐     │  │
+│  │  │   CHAT   │  │  PAPER   │  │  SEARCH  │  │  VISUAL  │     │  │
+│  │  │ INTERFACE│  │ BROWSER  │  │ FILTERS  │  │  CHARTS  │     │  │
+│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘     │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Component Explanation
