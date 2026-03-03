@@ -37,10 +37,16 @@ def init_session_state():
     if 'chunk_size' not in st.session_state:
         st.session_state.chunk_size = 512
     
-    if 'rag' not in st.session_state:
+    if 'rag' in st.session_state and st.session_state.rag is not None:
+        import inspect
+        sig = inspect.signature(st.session_state.rag.answer_question)
+        if 'history' not in sig.parameters:
+            st.session_state.pop('rag')
+            st.session_state.rag_initialized = False
+
+    if 'rag' not in st.session_state or not st.session_state.get('rag_initialized'):
         from src.rag_pipeline import RAGPipeline
         try:
-            # Re-initialize RAG if chunk size changed or it doesn't exist
             st.session_state.rag = RAGPipeline(
                 project_root=project_root, 
                 chunk_size=st.session_state.chunk_size
