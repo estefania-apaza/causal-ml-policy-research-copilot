@@ -19,9 +19,11 @@ apply_custom_styling()
 st.title("Paper Library")
 
 # Init session
-if 'rag' not in st.session_state:
-    from utils.session import init_session_state
-    init_session_state()
+from utils.session import init_session_state
+init_session_state()
+
+if 'reset_counter' not in st.session_state:
+    st.session_state.reset_counter = 0
 
 root = st.session_state.get('project_root', project_root)
 CATALOG_PATH = os.path.join(root, "papers", "paper_catalog.json")
@@ -43,22 +45,19 @@ all_papers = load_catalog(CATALOG_PATH, catalog_mtime)
 # Filters Sidebar
 with st.sidebar:
     st.header("Library Filters")
-    search_query = st.text_input("Search Title/Abstract", "", key="papers_search")
+    search_query = st.text_input("Search Title/Abstract", "", key=f"papers_search_{st.session_state.reset_counter}")
     
     auth_list = sorted(list(set([a for p in all_papers for a in p.get('authors', [])])))
-    filter_author = st.selectbox("Author", ["All"] + auth_list, key="papers_author")
+    filter_author = st.selectbox("Author", ["All"] + auth_list, key=f"papers_author_{st.session_state.reset_counter}")
     
     year_list = sorted(list(set([str(p.get('year', '')) for p in all_papers if p.get('year')])), reverse=True)
-    filter_year = st.selectbox("Year", ["All"] + year_list, key="papers_year")
+    filter_year = st.selectbox("Year", ["All"] + year_list, key=f"papers_year_{st.session_state.reset_counter}")
 
     topic_list = sorted(list(set([t for p in all_papers for t in p.get('topics', [])])))
-    filter_topic = st.selectbox("Topic", ["All"] + topic_list, key="papers_topic")
+    filter_topic = st.selectbox("Topic", ["All"] + topic_list, key=f"papers_topic_{st.session_state.reset_counter}")
 
     if st.button("Reset All Filters", use_container_width=True):
-        st.session_state.papers_search = ""
-        st.session_state.papers_author = "All"
-        st.session_state.papers_year = "All"
-        st.session_state.papers_topic = "All"
+        st.session_state.reset_counter += 1
         st.rerun()
 
 # Filter logic

@@ -19,9 +19,11 @@ st.set_page_config(page_title="Chat", page_icon="📚", layout="wide")
 apply_custom_styling()
 
 # Init
-if 'rag' not in st.session_state:
-    from utils.session import init_session_state
-    init_session_state()
+from utils.session import init_session_state
+init_session_state()
+
+if 'reset_counter' not in st.session_state:
+    st.session_state.reset_counter = 0
 
 root = st.session_state.get('project_root', project_root)
 
@@ -63,7 +65,7 @@ with st.sidebar:
         label = f"{p['id']}: {p['title'][:40]}"
         paper_options[label] = p['id']
 
-    selected_paper_label = st.selectbox("Filter by Paper", options=list(paper_options.keys()), key="filter_paper")
+    selected_paper_label = st.selectbox("Filter by Paper", options=list(paper_options.keys()), key=f"filter_paper_{st.session_state.reset_counter}")
     paper_id_filter = paper_options[selected_paper_label]
 
     # Author filter
@@ -72,17 +74,17 @@ with st.sidebar:
         for p in all_papers_meta
         for author in p.get('authors', [])
     ))
-    selected_author = st.selectbox("Filter by Author", ["All Authors"] + all_authors, key="filter_author")
+    selected_author = st.selectbox("Filter by Author", ["All Authors"] + all_authors, key=f"filter_author_{st.session_state.reset_counter}")
 
     # Year filter
     all_years = sorted(set(str(p.get('year', '')) for p in all_papers_meta if p.get('year')))
-    selected_year = st.selectbox("Filter by Year", ["All Years"] + all_years, key="filter_year")
+    selected_year = st.selectbox("Filter by Year", ["All Years"] + all_years, key=f"filter_year_{st.session_state.reset_counter}")
 
     # Topic filter
     all_topics = sorted(set(
         t for p in all_papers_meta for t in p.get('topics', [])
     ))
-    selected_topic = st.selectbox("Filter by Topic", ["All Topics"] + all_topics, key="filter_topic")
+    selected_topic = st.selectbox("Filter by Topic", ["All Topics"] + all_topics, key=f"filter_topic_{st.session_state.reset_counter}")
 
     st.divider()
     # Results slider
@@ -98,10 +100,7 @@ with st.sidebar:
             st.rerun()
     with c2:
         if st.button("Reset Filters", use_container_width=True):
-            st.session_state.filter_paper = "All Papers"
-            st.session_state.filter_author = "All Authors"
-            st.session_state.filter_year = "All Years"
-            st.session_state.filter_topic = "All Topics"
+            st.session_state.reset_counter += 1
             st.rerun()
     
     if st.button("🔄 Reset RAG Engine", use_container_width=True, help="Force re-initialization of the AI engine if you see errors."):
