@@ -63,7 +63,7 @@ with st.sidebar:
         label = f"{p['id']}: {p['title'][:40]}"
         paper_options[label] = p['id']
 
-    selected_paper_label = st.selectbox("Filter by Paper", options=list(paper_options.keys()))
+    selected_paper_label = st.selectbox("Filter by Paper", options=list(paper_options.keys()), key="filter_paper")
     paper_id_filter = paper_options[selected_paper_label]
 
     # Author filter
@@ -72,17 +72,17 @@ with st.sidebar:
         for p in all_papers_meta
         for author in p.get('authors', [])
     ))
-    selected_author = st.selectbox("Filter by Author", ["All Authors"] + all_authors)
+    selected_author = st.selectbox("Filter by Author", ["All Authors"] + all_authors, key="filter_author")
 
     # Year filter
     all_years = sorted(set(str(p.get('year', '')) for p in all_papers_meta if p.get('year')))
-    selected_year = st.selectbox("Filter by Year", ["All Years"] + all_years)
+    selected_year = st.selectbox("Filter by Year", ["All Years"] + all_years, key="filter_year")
 
     # Topic filter
     all_topics = sorted(set(
         t for p in all_papers_meta for t in p.get('topics', [])
     ))
-    selected_topic = st.selectbox("Filter by Topic", ["All Topics"] + all_topics)
+    selected_topic = st.selectbox("Filter by Topic", ["All Topics"] + all_topics, key="filter_topic")
 
     st.divider()
     # Results slider
@@ -98,10 +98,10 @@ with st.sidebar:
             st.rerun()
     with c2:
         if st.button("Reset Filters", use_container_width=True):
-            # We don't need to manually clear if we don't use key-based persistence, 
-            # but for selectboxes without keys, a rerun might not be enough if they're not controlled.
-            # However, standard selectboxes reset on rerun if not tied to session_state keys. 
-            # Let's add keys to ensure we can reset them.
+            st.session_state.filter_paper = "All Papers"
+            st.session_state.filter_author = "All Authors"
+            st.session_state.filter_year = "All Years"
+            st.session_state.filter_topic = "All Topics"
             st.rerun()
 
 # Resolve paper_id from author/year/topic filters if no paper selected
@@ -136,18 +136,8 @@ if user_input := st.chat_input("Ask a question about your papers..."):
         try:
             rag = st.session_state.rag
 
-            # Build conversation context (last 3 exchanges)
-            conv_history = ""
-            msgs = st.session_state.messages[:-1]  # exclude current
-            if len(msgs) > 1:
-                recent = msgs[-6:]  # last 3 exchanges
-                conv_history = "\n".join(
-                    f"{'User' if m['role'] == 'user' else 'Assistant'}: {m['content']}"
-                    for m in recent
-                )
-                enriched_question = f"Conversation so far:\n{conv_history}\n\nLatest question: {user_input}"
-            else:
-                enriched_question = user_input
+            # Pass history to RAG pipeline (limit to last 10 messages for token safety)
+            history = st.session_state.messages[:-1][-10:]
 
             # Apply paper_id filter (single paper or None)
             effective_paper_id = None
@@ -155,9 +145,10 @@ if user_input := st.chat_input("Ask a question about your papers..."):
                 effective_paper_id = matching_ids[0]
 
             response = rag.answer_question(
-                enriched_question,
+                user_input,
                 strategy=prompt_strategy,
-                paper_id=effective_paper_id
+                paper_id=effective_paper_id,
+                history=history
             )
         except Exception as e:
             response = f"Error generating answer: {e}"

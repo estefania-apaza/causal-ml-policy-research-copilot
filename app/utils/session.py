@@ -24,8 +24,12 @@ def init_session_state():
     load_dotenv(os.path.join(project_root, '.env'))
     
     # Bridge Streamlit Secrets to Environment Variables (for Cloud Deployment)
-    if "OPENAI_API_KEY" in st.secrets:
-        os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+    try:
+        if "OPENAI_API_KEY" in st.secrets:
+            os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+    except Exception:
+        # Ignore if no secrets found locally - will fallback to .env
+        pass
     
     if 'project_root' not in st.session_state:
         st.session_state.project_root = project_root

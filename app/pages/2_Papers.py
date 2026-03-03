@@ -43,18 +43,22 @@ all_papers = load_catalog(CATALOG_PATH, catalog_mtime)
 # Filters Sidebar
 with st.sidebar:
     st.header("Library Filters")
-    search_query = st.text_input("Search Title/Abstract", "")
+    search_query = st.text_input("Search Title/Abstract", "", key="papers_search")
     
     auth_list = sorted(list(set([a for p in all_papers for a in p.get('authors', [])])))
-    filter_author = st.selectbox("Author", ["All"] + auth_list)
+    filter_author = st.selectbox("Author", ["All"] + auth_list, key="papers_author")
     
     year_list = sorted(list(set([str(p.get('year', '')) for p in all_papers if p.get('year')])), reverse=True)
-    filter_year = st.selectbox("Year", ["All"] + year_list)
+    filter_year = st.selectbox("Year", ["All"] + year_list, key="papers_year")
 
     topic_list = sorted(list(set([t for p in all_papers for t in p.get('topics', [])])))
-    filter_topic = st.selectbox("Topic", ["All"] + topic_list)
+    filter_topic = st.selectbox("Topic", ["All"] + topic_list, key="papers_topic")
 
     if st.button("Reset All Filters", use_container_width=True):
+        st.session_state.papers_search = ""
+        st.session_state.papers_author = "All"
+        st.session_state.papers_year = "All"
+        st.session_state.papers_topic = "All"
         st.rerun()
 
 # Filter logic

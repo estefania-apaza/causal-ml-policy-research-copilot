@@ -81,9 +81,9 @@ class RAGPipeline:
         self.vector_store.add_chunks(chunks, embeddings)
         return len(chunks)
         
-    def answer_question(self, question: str, strategy: str = "v1_delimiters", paper_id: str | None = None) -> str:
+    def answer_question(self, question: str, strategy: str = "v1_delimiters", paper_id: str | None = None, history: list = None) -> str:
         """
-        Answers a user question based on the selected prompt strategy.
+        Answers a user question based on the selected prompt strategy and optional chat history.
         """
         # 1. Retrieve
         retrieved = self.retriever.retrieve(question, top_k=5, paper_id=paper_id)
@@ -102,7 +102,7 @@ class RAGPipeline:
             
         # 3. Generate
         if strategy == "v2_json_output":
-            ans_dict = self.generator.generate_json_answer(system_prompt, context, question)
+            ans_dict = self.generator.generate_json_answer(system_prompt, context, question, history=history)
             return json.dumps(ans_dict, indent=2)
         else:
-            return self.generator.generate_answer(system_prompt, context, question)
+            return self.generator.generate_answer(system_prompt, context, question, history=history)
