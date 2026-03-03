@@ -15,6 +15,7 @@ from src.retrieval.retriever import Retriever
 from src.generation.generator import Generator
 
 class RAGPipeline:
+    __version__ = "2.0.0"
     def __init__(self, project_root: str = None, chunk_size: int = 512):
         if project_root is None:
             project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

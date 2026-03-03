@@ -38,10 +38,9 @@ def init_session_state():
         st.session_state.chunk_size = 512
     
     if 'rag' in st.session_state and st.session_state.rag is not None:
-        import inspect
-        sig = inspect.signature(st.session_state.rag.answer_question)
-        if 'history' not in sig.parameters:
-            st.session_state.pop('rag')
+        # Robust check for stale object version
+        if not hasattr(st.session_state.rag, '__version__') or st.session_state.rag.__version__ != "2.0.0":
+            st.session_state.pop('rag', None)
             st.session_state.rag_initialized = False
 
     if 'rag' not in st.session_state or not st.session_state.get('rag_initialized'):
