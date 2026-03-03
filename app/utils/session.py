@@ -37,23 +37,17 @@ def init_session_state():
     if 'chunk_size' not in st.session_state:
         st.session_state.chunk_size = 512
     
-    if 'rag' in st.session_state and st.session_state.rag is not None:
-        # Robust check for stale object version
-        if not hasattr(st.session_state.rag, '__version__') or st.session_state.rag.__version__ != "2.0.0":
-            st.session_state.pop('rag', None)
-            st.session_state.rag_initialized = False
-
-    if 'rag' not in st.session_state or not st.session_state.get('rag_initialized'):
+    if 'rag_engine' not in st.session_state:
         from src.rag_pipeline import RAGPipeline
         try:
-            st.session_state.rag = RAGPipeline(
+            st.session_state.rag_engine = RAGPipeline(
                 project_root=project_root, 
                 chunk_size=st.session_state.chunk_size
             )
-            st.session_state.rag_initialized = True
+            st.session_state.rag_engine_ready = True
         except Exception as e:
-            st.session_state.rag = None
-            st.session_state.rag_initialized = False
+            st.session_state.rag_engine = None
+            st.session_state.rag_engine_ready = False
             st.session_state.rag_error = str(e)
             
     if "messages" not in st.session_state:

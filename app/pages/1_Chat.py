@@ -18,7 +18,6 @@ from components.chat_message import render_chat_message
 st.set_page_config(page_title="Chat", page_icon="📚", layout="wide")
 apply_custom_styling()
 
-# Init
 from utils.session import init_session_state
 init_session_state()
 
@@ -118,7 +117,7 @@ else:
 # Main chat area
 st.title("Chat")
 
-if not st.session_state.get('rag_initialized'):
+if not st.session_state.get('rag_engine_ready'):
     st.error("System not initialized. Go to the Main page first.")
     st.stop()
 
@@ -133,7 +132,7 @@ if user_input := st.chat_input("Ask a question about your papers..."):
 
     with st.spinner("Searching papers..."):
         try:
-            rag = st.session_state.rag
+            rag = st.session_state.rag_engine
 
             # Pass history to RAG pipeline (limit to last 10 messages for token safety)
             history = st.session_state.messages[:-1][-10:]

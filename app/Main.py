@@ -27,7 +27,7 @@ st.caption("Advanced Retrieval-Augmented Generation for Causal ML Research")
 with st.spinner("Initializing Pipeline..."):
     init_session_state()
 
-if st.session_state.get('rag_initialized', False):
+if st.session_state.get('rag_engine_ready', False):
     st.success("System ready")
 else:
     error = st.session_state.get('rag_error', 'Unknown error')
