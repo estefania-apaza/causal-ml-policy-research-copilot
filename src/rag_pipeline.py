@@ -30,8 +30,27 @@ class RAGPipeline:
         self.generator = Generator(model_name="gpt-4-turbo-preview")
 
     def format_apa_citation(self, title: str, authors_str: str, year: str) -> str:
-        """Formats authors according to APA rules: First Author et al. for 3+ authors."""
-        authors = [a.strip() for a in authors_str.split(",") if a.strip()]
+        """Formats authors according to APA rules: Last Name et al. or Last1 & Last2."""
+        # Split by semicolon (our new separator) OR comma if no semicolons found (legacy)
+        if ";" in authors_str:
+            authors_raw = [a.strip() for a in authors_str.split(";") if a.strip()]
+        else:
+            # Fallback for old records: this is tricky if they have "Last, First"
+            # We try to see if it's "Last, First" by checking if there's only one comma
+            authors_raw = [a.strip() for a in authors_str.split(",") if a.strip()]
+            if len(authors_raw) == 2 and authors_raw[1].endswith("."): # Likely "Last, I."
+                 authors_raw = [f"{authors_raw[0]}, {authors_raw[1]}"]
+
+        def get_last_name(full_name):
+            # If "Last, First", take "Last"
+            if "," in full_name:
+                return full_name.split(",")[0].strip()
+            # If "First Last", take "Last"
+            parts = full_name.split()
+            return parts[-1] if parts else full_name
+
+        authors = [get_last_name(a) for a in authors_raw]
+        
         if not authors:
             return f"Unknown ({year})"
         
@@ -61,10 +80,11 @@ class RAGPipeline:
             return 0  # Skip documents with almost no extractable text
         
         # 3. Chunk  — All metadata values MUST be strings for ChromaDB
+        # Using semicolon to separate authors to avoid comma confusion
         metadata = {
             "paper_id": paper_id,
             "title": str(paper_metadata.get('title', 'Unknown Title')),
-            "authors": ", ".join(paper_metadata.get('authors', [])),
+            "authors": "; ".join(paper_metadata.get('authors', [])),
             "year": str(paper_metadata.get('year', '')),
             "doi": str(paper_metadata.get('doi', '')),
         }
