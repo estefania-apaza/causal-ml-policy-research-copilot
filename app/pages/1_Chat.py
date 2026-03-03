@@ -49,13 +49,19 @@ with st.sidebar:
 
     catalog_path = os.path.join(root, "papers", "paper_catalog.json")
     paper_options = {"All Papers": None}
-    all_papers_meta = []
-    if os.path.exists(catalog_path):
-        with open(catalog_path, 'r', encoding='utf-8') as f:
-            all_papers_meta = json.load(f).get('papers', [])
-        for p in all_papers_meta:
-            label = f"{p['id']}: {p['title'][:40]}"
-            paper_options[label] = p['id']
+    @st.cache_data
+    def load_catalog_chat(file_path, mtime):
+        if os.path.exists(file_path):
+            with open(file_path, 'r', encoding='utf-8') as f:
+                return json.load(f).get('papers', [])
+        return []
+
+    catalog_mtime = os.path.getmtime(catalog_path) if os.path.exists(catalog_path) else 0
+    all_papers_meta = load_catalog_chat(catalog_path, catalog_mtime)
+    
+    for p in all_papers_meta:
+        label = f"{p['id']}: {p['title'][:40]}"
+        paper_options[label] = p['id']
 
     selected_paper_label = st.selectbox("Filter by Paper", options=list(paper_options.keys()))
     paper_id_filter = paper_options[selected_paper_label]

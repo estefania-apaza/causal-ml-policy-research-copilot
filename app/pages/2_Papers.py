@@ -27,16 +27,18 @@ root = st.session_state.get('project_root', project_root)
 CATALOG_PATH = os.path.join(root, "papers", "paper_catalog.json")
 
 @st.cache_data
-def load_catalog():
-    if os.path.exists(CATALOG_PATH):
+def load_catalog(file_path, mtime):
+    if os.path.exists(file_path):
         try:
-            with open(CATALOG_PATH, 'r', encoding='utf-8') as f:
+            with open(file_path, 'r', encoding='utf-8') as f:
                 return json.load(f).get("papers", [])
         except Exception:
             return []
     return []
 
-all_papers = load_catalog()
+# Get modification time to invalidate cache if file changes
+catalog_mtime = os.path.getmtime(CATALOG_PATH) if os.path.exists(CATALOG_PATH) else 0
+all_papers = load_catalog(CATALOG_PATH, catalog_mtime)
 
 # Filters Sidebar
 with st.sidebar:
