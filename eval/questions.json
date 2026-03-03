@@ -2,20 +2,68 @@ import json
 
 def get_eval_questions():
     questions = [
-    {
+        # Factual Questions
+        {
         "id": "q1",
         "type": "factual",
-        "question": "What is the average treatment effect of the program in the study by Knittel and Stolper?",
+        "question": "What is the main contribution of the study by Knittel and Stolper (2025)?",
         "expected_keywords": [
-            "9 kilowatt hours",
-            "9 kWh",
-            "electricity reduction"
+            "causal forests",
+            "energy conservation",
+            "targeting",
+            "household energy"
         ]
     },
     {
         "id": "q2",
+        "type": "factual",
+        "question": "In what year was the 'credibility revolution' mentioned by Lechner (2023) associated with the Nobel Prize?",
+        "expected_keywords": [
+            "2021",
+            "David Card",
+            "Josh Angrist",
+            "Guido Imbens"
+        ]
+    },
+    {
+        "id": "q3",
+        "type": "factual",
+        "question": "Who are the authors of the paper titled 'Recursive partitioning for heterogeneous causal effects'?",
+        "expected_keywords": [
+            "Athey",
+            "Imbens",
+            "2016"
+        ]
+    },
+    {
+        "id": "q4",
+        "type": "factual",
+        "question": "What specific machine learning method does Xi et al. (2025) use to evaluate carbon emissions trading?",
+        "expected_keywords": [
+            "Double Machine Learning",
+            "DML",
+            "Difference-in-Differences",
+            "DID"
+        ]
+    },
+    {
+        "id": "q5",
+        "type": "factual",
+        "question": "What are the three state-of-the-art estimators for epidemiologists discussed by Moccia et al. (2024)?",
+        "expected_keywords": [
+            "TMLE",
+            "AIPW",
+            "DML",
+            "Targeted Maximum Likelihood Estimation",
+            "Augmented Inverse Probability Weighting",
+            "Double/Debiased Machine Learning"
+        ]
+    },
+        # Analytical Questions
+        {
+        "id": "q6",
         "type": "analytical",
-        "question": "Compare the performance of causal forests versus alternative predictive models according to Knittel and Stolper.",
+        "question": "How does the performance of causal forests compare to alternative predictive models in Knittel and Stolper (2025)?",
         "expected_keywords": [
             "factor of 3-5",
             "more benefits",
@@ -23,22 +71,148 @@ def get_eval_questions():
         ]
     },
     {
-        "id": "q3",
-        "type": "synthesis",
-        "question": "How are causal forests generally used for public policy based on Lechner (2023) and similar papers?",
+        "id": "q7",
+        "type": "analytical",
+        "question": "What are the limitations of black-box causal machine learning models according to Rehill and Biddle (2024)?",
         "expected_keywords": [
-            "credibility revolution",
-            "heterogeneous treatment effects",
-            "random forest algorithm"
+            "transparency",
+            "accountability",
+            "interpretability",
+            "black-box"
         ]
     },
     {
-        "id": "q4",
+        "id": "q8",
+        "type": "analytical",
+        "question": "What evidence supports the effectiveness of green finance policy in China according to Tang and Zhou (2025)?",
+        "expected_keywords": [
+            "carbon unlocking efficiency",
+            "industrial structure",
+            "energy intensity"
+        ]
+    },
+    {
+        "id": "q9",
+        "type": "analytical",
+        "question": "How does 'honest' estimation in Athey and Imbens (2016) affect the construction of confidence intervals?",
+        "expected_keywords": [
+            "valid confidence intervals",
+            "partition",
+            "bias",
+            "nominal coverage"
+        ]
+    },
+    {
+        "id": "q10",
+        "type": "analytical",
+        "question": "Compare the impact of subsidised vs contributory health insurance in Indonesia as found by Kreif et al. (2021).",
+        "expected_keywords": [
+            "contributory",
+            "beneficial",
+            "subsidised",
+            "no impact"
+        ]
+    },
+        # Synthesis Questions
+        {
+        "id": "q11",
+        "type": "synthesis",
+        "question": "What common themes appear across these papers regarding the use of machine learning in public policy?",
+        "expected_keywords": [
+            "targeting",
+            "heterogeneity",
+            "causal inference",
+            "efficiency"
+        ]
+    },
+    {
+        "id": "q12",
+        "type": "synthesis",
+        "question": "How has the estimation of heterogeneous treatment effects (HTE) evolved according to Hu (2023)?",
+        "expected_keywords": [
+            "multiplicative interactions",
+            "machine learning",
+            "causal forests",
+            "meta-learners"
+        ]
+    },
+    {
+        "id": "q13",
+        "type": "synthesis",
+        "question": "What gaps in research do these papers identify concerning the transparency of causal ML?",
+        "expected_keywords": [
+            "interpretability tools",
+            "accountability",
+            "explainable AI"
+        ]
+    },
+    {
+        "id": "q14",
+        "type": "synthesis",
+        "question": "How do environmental policies benefit from the integration of machine learning across the studies by Miller, Heffernan, and Xi?",
+        "expected_keywords": [
+            "air pollution",
+            "carbon emissions",
+            "fisheries",
+            "nonparametric"
+        ]
+    },
+    {
+        "id": "q15",
+        "type": "synthesis",
+        "question": "Identify the role of 'targeting' in social and energy policies as discussed by Knittel and Athey.",
+        "expected_keywords": [
+            "nudges",
+            "optimal targeting",
+            "resource allocation"
+        ]
+    },
+        # Edge Cases
+        {
+        "id": "q16",
         "type": "edge_case",
         "question": "What is the capital of France?",
         "expected_keywords": [
-            "cannot find this information",
-            "I do not know"
+            "not in papers",
+            "out of scope",
+            "cannot find"
+        ]
+    },
+    {
+        "id": "q17",
+        "type": "edge_case",
+        "question": "Summarize a paper about quantum physics that I haven't uploaded.",
+        "expected_keywords": [
+            "not available",
+            "not in the catalog",
+            "I don't have access"
+        ]
+    },
+    {
+        "id": "q18",
+        "type": "edge_case",
+        "question": "Who won the FIFA World Cup in 2022?",
+        "expected_keywords": [
+            "not in papers",
+            "out of scope"
+        ]
+    },
+    {
+        "id": "q19",
+        "type": "edge_case",
+        "question": "Tell me a joke about economists.",
+        "expected_keywords": [
+            "not in the papers",
+            "cannot assist"
+        ]
+    },
+    {
+        "id": "q20",
+        "type": "edge_case",
+        "question": "What is the specific recipe for a Sacher Torte?",
+        "expected_keywords": [
+            "out of scope",
+            "not in the context"
         ]
     }
 ]
