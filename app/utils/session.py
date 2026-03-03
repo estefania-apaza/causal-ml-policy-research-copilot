@@ -34,6 +34,9 @@ def init_session_state():
     if 'project_root' not in st.session_state:
         st.session_state.project_root = project_root
 
+    if 'chunk_size' not in st.session_state:
+        st.session_state.chunk_size = 512
+
     if 'rag' not in st.session_state or not st.session_state.get('rag_initialized'):
         from src.rag_pipeline import RAGPipeline
         try:
