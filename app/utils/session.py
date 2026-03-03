@@ -34,20 +34,17 @@ def init_session_state():
     if 'project_root' not in st.session_state:
         st.session_state.project_root = project_root
 
-    if 'chunk_size' not in st.session_state:
-        st.session_state.chunk_size = 512
-    
-    if 'rag_engine' not in st.session_state:
-        from src.rag_engine import RAGPipeline
+    if 'rag' not in st.session_state or not st.session_state.get('rag_initialized'):
+        from src.rag_pipeline import RAGPipeline
         try:
-            st.session_state.rag_engine = RAGPipeline(
+            st.session_state.rag = RAGPipeline(
                 project_root=project_root, 
                 chunk_size=st.session_state.chunk_size
             )
-            st.session_state.rag_engine_ready = True
+            st.session_state.rag_initialized = True
         except Exception as e:
-            st.session_state.rag_engine = None
-            st.session_state.rag_engine_ready = False
+            st.session_state.rag = None
+            st.session_state.rag_initialized = False
             st.session_state.rag_error = str(e)
             
     if "messages" not in st.session_state:

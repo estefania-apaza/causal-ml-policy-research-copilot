@@ -117,7 +117,7 @@ else:
 # Main chat area
 st.title("Chat")
 
-if not st.session_state.get('rag_engine_ready'):
+if not st.session_state.get('rag_initialized'):
     st.error("System not initialized. Go to the Main page first.")
     st.stop()
 
@@ -132,10 +132,7 @@ if user_input := st.chat_input("Ask a question about your papers..."):
 
     with st.spinner("Searching papers..."):
         try:
-            rag = st.session_state.rag_engine
-
-            # Pass history to RAG pipeline (limit to last 10 messages for token safety)
-            history = st.session_state.messages[:-1][-10:]
+            rag = st.session_state.rag
 
             # Apply paper_id filter (single paper or None)
             effective_paper_id = None
@@ -145,8 +142,7 @@ if user_input := st.chat_input("Ask a question about your papers..."):
             response = rag.answer_question(
                 user_input,
                 strategy=prompt_strategy,
-                paper_id=effective_paper_id,
-                history=history
+                paper_id=effective_paper_id
             )
         except Exception as e:
             response = f"Error generating answer: {e}"

@@ -97,7 +97,7 @@ st.divider()
 # Ingestion Control
 st.subheader("Vector Database Ingestion")
 if st.button("Ingest Available PDFs"):
-    if not st.session_state.get('rag_engine_ready'):
+    if not st.session_state.get('rag_initialized'):
         st.error("System not initialized.")
     else:
         progress_bar = st.progress(0)
@@ -109,7 +109,7 @@ if st.button("Ingest Available PDFs"):
             status_text.text(f"Ingesting: {paper.get('id')}...")
             
             try:
-                chunks_added = st.session_state.rag_engine.add_paper(pdf_path, paper)
+                chunks_added = st.session_state.rag.add_paper(pdf_path, paper)
                 if chunks_added > 0:
                     success_count += 1
             except Exception as e:
